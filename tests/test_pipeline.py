@@ -23,9 +23,11 @@ def test_pipeline_builds_bronze_silver_gold(tmp_path: Path) -> None:
     )
     result = run_pipeline(paths)
     assert result == {"source_rows": 3, "silver_rows": 3, "gold_rows": 2}
-    rows = duckdb.connect().execute(
-        f"SELECT category, event_count, total_value FROM read_parquet('{paths.gold.as_posix()}') ORDER BY category"
-    ).fetchall()
+    query = (
+        "SELECT category, event_count, total_value "
+        f"FROM read_parquet('{paths.gold.as_posix()}') ORDER BY category"
+    )
+    rows = duckdb.connect().execute(query).fetchall()
     assert rows == [("maintenance", 1, 5.0), ("sensor", 2, 30.0)]
 
 
