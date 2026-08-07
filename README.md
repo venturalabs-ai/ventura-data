@@ -1,27 +1,38 @@
 # VenturaData
 
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Status](https://img.shields.io/badge/status-incubation-orange)
+![Python](https://img.shields.io/badge/python-3.11%2B-blue)
+![License](https://img.shields.io/github/license/venturalabs-ai/ventura-data)
 
-**Análise de dados automatizada** — EDA, insights em linguagem natural, anomalias e dashboards.
+**Plataforma experimental para análise de dados automatizada, EDA, anomalias e geração de insights.**
 
-> Ecossistema **Ventura** · [Ventura Studio](https://github.com/chamseddinehiddoud/ventura-studio)
+> Ecossistema Ventura · [Ventura Studio](https://github.com/venturalabs-ai/ventura-studio)
 
-## Funcionalidades
+## Maturidade
 
-- EDA automatizada
-- Insights em linguagem natural
-- Detecção de anomalias
-- Dashboards gerados
+**Incubation / experimental.** A proposta está em consolidação e ainda não deve ser apresentada como produto pronto.
 
-## Stack planejada
+## Escopo planejado
 
-Python · Pandas · Scikit-learn · FastAPI · Plotly · Docker
+- EDA automatizada;
+- insights em linguagem natural;
+- detecção de anomalias;
+- geração de dashboards;
+- API para workflows de dados.
 
-## Status
+## Stack alvo
 
-🔷 Scaffold inicial (2026-08-07).
+`Python` · `Pandas` · `Scikit-learn` · `FastAPI` · `Plotly` · `Docker`
+
+## Critérios para Beta
+
+- pipeline funcional ponta a ponta;
+- testes unitários e integração;
+- CI bloqueante;
+- dataset de demonstração reproduzível;
+- documentação de entradas, saídas e limitações;
+- release semântica inicial.
 
 ## Licença
 
-MIT
+Consulte [LICENSE](LICENSE).
