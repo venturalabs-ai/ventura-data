@@ -1,0 +1,26 @@
+name: Repository Health
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate repository baseline
+        run: |
+          test -s README.md
+          test -s LICENSE
+          if grep -n "chamseddinehiddoud" README.md; then
+            echo "::error::README still references the previous GitHub username"
+            exit 1
+          fi
+          echo "Repository baseline OK"
