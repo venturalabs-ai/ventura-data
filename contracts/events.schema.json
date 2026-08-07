@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ventura Data Event Source Contract",
+  "type": "object",
+  "required": ["event_id", "event_time", "category", "value"],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "event_time": {"type": "string", "format": "date-time"},
+    "category": {"type": "string", "minLength": 1},
+    "value": {"type": "number"}
+  },
+  "x-dataset-rules": {
+    "event_id_unique": true,
+    "row_count_preserved_source_to_silver": true
+  }
+}

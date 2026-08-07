@@ -19,6 +19,8 @@
   },
   "routes": {
     "product-scope": ["github","filesystem","duckdb","python","huggingface","openai"],
-    "stack-bootstrap": ["github","filesystem","python","duckdb","docker","sentry"]
+    "stack-bootstrap": ["github","filesystem","python","duckdb","docker","sentry"],
+    "demo-script": ["filesystem","python","duckdb"],
+    "first-issue-pack": ["github","filesystem","python"]
   }
 }
