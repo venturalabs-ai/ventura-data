@@ -1,12 +1,9 @@
-from __future__ import annotations
-
 import argparse
 import csv
 from dataclasses import dataclass
 from pathlib import Path
 
 import duckdb
-
 
 REQUIRED_COLUMNS = ("event_id", "event_time", "category", "value")
 
