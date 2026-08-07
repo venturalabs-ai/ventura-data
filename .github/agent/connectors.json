@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "runtime_standard": "venturalabs-ai/ventura.build/AGENT_RUNTIME_STANDARD.md",
+  "max_active_connectors_per_skill": 6,
+  "defaults": {"mode":"read-only","human_approval_for":["external-write","delete","deploy","secrets"]},
+  "catalog": {
+    "github": {"trust":"official","purpose":"repository code issues PRs Actions and provenance"},
+    "postgresql": {"trust":"native","purpose":"structured datasets metadata analytics state and durable memory"},
+    "duckdb": {"trust":"native","purpose":"local analytical SQL over files and reproducible datasets"},
+    "qdrant": {"trust":"native","purpose":"vector retrieval for semantic data and RAG"},
+    "openai": {"trust":"native","purpose":"embeddings structured extraction and model routing"},
+    "anthropic": {"trust":"native","purpose":"reasoning fallback for analysis and review"},
+    "huggingface": {"trust":"official","purpose":"models datasets and evaluation assets"},
+    "sentry": {"trust":"official","purpose":"errors traces releases and runtime diagnostics"},
+    "grafana": {"trust":"official","purpose":"metrics dashboards and operational analysis"},
+    "docker": {"trust":"official","purpose":"reproducible runtime and data service containers"},
+    "filesystem": {"trust":"local","purpose":"bounded access to datasets fixtures notebooks and artifacts"},
+    "python": {"trust":"local","purpose":"EDA transforms tests benchmarks and deterministic analysis"}
+  },
+  "routes": {
+    "product-scope": ["github","filesystem","duckdb","python","huggingface","openai"],
+    "stack-bootstrap": ["github","filesystem","python","duckdb","docker","sentry"]
+  }
+}
